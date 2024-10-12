@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inpatient_rooms', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id(); // Primary key dengan auto increment
-            $table->string('name'); // Nama ruangan rawat inap
-            $table->enum('kelas', ['VIP', '1', '2', '3']); // Kelas ruangan, bisa VIP, 1, 2, atau 3
+            $table->string('name'); // Nama practice room
             $table->integer('capacity')->default(1); // Kapasitas ruangan, default 1
-            $table->decimal('price', 10, 2); // Harga ruangan dengan dua desimal (misal: 1000.00)
             $table->string('description')->nullable(); // Deskripsi ruangan, bisa null
             $table->timestamps(); // Kolom created_at dan updated_at
         });
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inpatient_rooms');
+        Schema::dropIfExists('rooms');
     }
 };

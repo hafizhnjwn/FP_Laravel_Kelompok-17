@@ -14,5 +14,4 @@ class PracticeRoom extends Model
         'capacity',
         'description',
     ];
-
 }

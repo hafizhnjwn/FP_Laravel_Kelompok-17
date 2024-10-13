@@ -88,8 +88,8 @@
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
-        <span class="subhead">HEALTHY LIVING</span>
-        <h1 class="display-4">HAPPY LIFE</h1>
+        <span class="subhead">HEALTHY BODY</span>
+        <h1 class="display-4">HAPPY COLLEGE</h1>
        
       </div>
     </div>
@@ -103,7 +103,8 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>Welcome to TCare <br> Hospital </h1>
+            <h1>Welcome to TCare Hospital </h1>
+            <br>
             <p class="text-grey mb-4">
 
               Selamat datang di Pusat Kesehatan Anda, tempat di mana kesehatan dan kesejahteraan menjadi prioritas utama. Kami berkomitmen untuk memberikan pelayanan kesehatan berkualitas tinggi dan perawatan yang peduli kepada semua pasien kami.

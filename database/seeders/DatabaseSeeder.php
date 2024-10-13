@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         Doctor::factory(5)->create();
         User::factory(10)->create();
+        News::factory(3)->create();
     }
 }

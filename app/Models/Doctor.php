@@ -18,10 +18,5 @@ class Doctor extends Model
         'image',
         'created_at',
         'updated_at'
-    ];
-
-    public function specialist()
-    {
-        return $this->belongsTo(Specialist::class);
-    }
+];
 }

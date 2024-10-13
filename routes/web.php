@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
+use App\Models\Specialty;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,10 @@ Route::post('/appointment',[HomeController::class,'appointment']);
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+
+Route::get('/myappointment',[HomeController::class,'myappointment']);
+
+Route::get('/doctor/{specialties:slug}', function(Specialty $specialties){
+    return view('user.doctors', ['title' => 'Doctor by ' . $specialties->name, 'posts' => $specialties->doctors]);
+});
+    

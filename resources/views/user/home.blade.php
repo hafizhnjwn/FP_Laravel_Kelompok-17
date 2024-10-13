@@ -122,7 +122,7 @@
     </div> <!-- .bg-light -->
   </div> <!-- .bg-light -->
 
-  @include('user.doctor')
+  @include('user.specialty')
 
   @include('user.latest')
 

@@ -10,6 +10,7 @@ use App\Models\User;
 
 use App\Models\Doctor;
 use App\Models\News;
+use App\Models\Specialty;
 use App\Models\Appointment;
 
 
@@ -19,11 +20,12 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
-            $doctors = doctor::all();
+            $doctors = Doctor::all();
+            $specialties = Specialty::all();
             $news = news::all();
             if(Auth::user()->usertype=='0')
             {
-                return view('user.home', compact('doctors', 'news'));
+                return view('user.home', compact('doctors', 'news', 'specialties'));
             }
             else 
             {
@@ -42,9 +44,10 @@ public function index()
     }
     else
     {
-     $doctors = doctor::all();
+     $doctors = Doctor::all();
+     $specialties = Specialty::all();
      $news = news::all();
-     return view('user.home', compact('doctors', 'news'));
+     return view('user.home', compact('doctors', 'news', 'specialties'));
     }
     
 }
@@ -99,6 +102,22 @@ public function cancel_appoint($id)
     $data->delete();
 
     return redirect()->back();
+}
+
+public function specialty()
+{
+    if(Auth::id())
+    {
+        $userid=Auth::user()->id;
+        $appoint=Appointment::where('user_id', "$userid")->get();
+    
+        return view('user.my_appointment', compact('appoint'));
+    }
+   
+  else
+  {
+    return redirect()->back();
+  }
 }
 
 }

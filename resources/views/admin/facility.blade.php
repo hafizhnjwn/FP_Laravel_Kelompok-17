@@ -4,7 +4,7 @@
         @csrf
        
     </form>
-     @include('admin.lihat_news')
+     @include('admin.lihat_facility')
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
     

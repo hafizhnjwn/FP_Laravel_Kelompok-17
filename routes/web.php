@@ -46,17 +46,15 @@ Route::get('updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 
 Route::post('editdoctor/{id}', [AdminController::class, 'editdoctor']);
 
-Route::get('/add_news',[NewsController::class,'addnewsview']);
+use App\Http\Controllers\FacilityController;
 
-Route::get('/news_list',[NewsController::class,'showlist']);
+Route::get('/add_facility_view', [FacilityController::class, 'addview']);
+Route::post('/store_facility', [FacilityController::class, 'store_facility']);
+Route::get('/facility_list', [FacilityController::class, 'showlist']);
+Route::get('/deletefacility/{id}', [FacilityController::class, 'deletefacility']);
+Route::get('/updatefacility/{id}', [FacilityController::class, 'updatefacility']);
+Route::post('/updatefacility/{id}', [FacilityController::class, 'update']);
 
-Route::get('/deletenews/{id}', [NewsController::class, 'deletenews']);
-
-Route::get('updatenews/{id}', [NewsController::class, 'updatenews']);
-
-Route::post('updateberita/{id}', [NewsController::class, 'updateberita']);
-
-Route::post('/store_news',[NewsController::class,'store_news']);
 
 Route::post('/appointment',[HomeController::class,'appointment']);
 

@@ -66,6 +66,4 @@
           modal.classList.remove('flex', 'justify-center', 'items-center'); // Remove 'flex' properties
       }
   </script>
-  
-
 </x-layout>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
+use App\Models\Facility;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,18 @@ Route::post('/appointment',[HomeController::class,'appointment']);
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/myappointment/{id}', [HomeController::class, 'cancel_appoint'])->name('cancel_appoint');
+
+Route::get('/facilities', function () {
+    $query = Facility::latest();
+
+    if (request()->has('search')) {
+        $query->where('name', 'like', '%' . request('search') . '%');
+    }
+
+    $facilities = $query->paginate(16);
+
+    return view('user.facilities', ['facilities' => $facilities]);
+});
+Route::get('/facilities/{facility:slug}', function (Facility $facility) {
+    return view('user.facility', ['facility' => $facility]);
+});

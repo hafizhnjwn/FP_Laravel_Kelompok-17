@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
 
         <div class="container">
-            <a class="navbar-brand" href=""><span class="text-primary">TCare Hospital</a>
+            <a class="/" href="{{ auth()->check() ? url('/home') : url('/') }}"><span class="text-primary">TCare Hospital</a>
 
 
 
@@ -18,10 +18,10 @@
                     <a class="nav-link" href="{{ auth()->check() ? url('/home') : url('/') }}">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="doctor">Our Doctors</a>
+                    <a class="nav-link" href="/doctor">Doctors</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="facilities">Our Facilities</a>
+                    <a class="nav-link" href="/facilities">Facilities</a>
                 </li>
 
                 @if (Route::has('login'))

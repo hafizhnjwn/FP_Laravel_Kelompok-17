@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
-            $table->string('speciality')->nullable();
+            $table->foreignId('specialty_id')->constrained(
+                table: 'specialties', indexName: 'doctor_specialty_id'
+            );
             $table->string('room')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

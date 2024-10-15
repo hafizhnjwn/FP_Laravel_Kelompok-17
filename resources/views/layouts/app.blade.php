@@ -10,6 +10,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('assets/css/maicons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/owl-carousel/css/owl.carousel.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendor/animate/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -41,5 +46,11 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/owl-carousel/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/wow/wow.min.js') }}"></script>
+        <script src="{{ asset('assets/js/theme.js') }}"></script>
     </body>
 </html>

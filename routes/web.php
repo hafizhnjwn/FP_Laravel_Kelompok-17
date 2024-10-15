@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
-use App\Models\Facility;
+use App\Http\Controllers\DoctorController;
 
+use App\Models\Facility;
+use App\Models\Specialty;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +75,13 @@ Route::get('/facilities', function () {
 
     return view('user.facilities', ['facilities' => $facilities]);
 });
+
 Route::get('/facilities/{facility:slug}', function (Facility $facility) {
     return view('user.facility', ['facility' => $facility]);
 });
+
+Route::get('/doctor/{specialties:slug}', function(Specialty $specialties){
+    return view('user.doctors', ['title' => 'Doctor by ' . $specialties->name, 'posts' => $specialties->doctors]);
+});
+
+Route::get('/doctor',[DoctorController::class,'doctor']);

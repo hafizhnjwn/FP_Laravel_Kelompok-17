@@ -10,6 +10,7 @@ use App\Models\User;
 
 use App\Models\Doctor;
 use App\Models\Facility;
+use App\Models\Specialty;
 use App\Models\Appointment;
 
 
@@ -18,12 +19,13 @@ class HomeController extends Controller
     public function redirect()
     {
         if (Auth::id()) {
-            $doctors = doctor::all();
+            $doctors = Doctor::all();
+            $specialties = Specialty::all();
             $facilities = Facility::all();
             if (Auth::user()->usertype == '0') {
-                return view('user.home', compact('doctors', 'facilities'));
+                return view('user.home', compact('doctors', 'facilities', 'specialties'));
             } else {
-                return view('admin.home', compact('doctors', 'facilities'));
+                return view('admin.home', compact('doctors', 'facilities', 'specialties'));
             }
         } else {
             return redirect()->back();
@@ -32,11 +34,12 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::id()) {
-            return redirect('home');
+            return redirect('user.home');
         } else {
-            $doctors = doctor::all();
+            $doctors = Doctor::all();
+            $specialties = Specialty::all();
             $facilities = Facility::all();
-            return view('user.home', compact('doctors', 'facilities'));
+            return view('user.home', compact('doctors', 'facilities', 'specialties'));
         }
     }
 
@@ -99,4 +102,5 @@ class HomeController extends Controller
         // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Appointment status updated to canceled.');
     }
+
 }

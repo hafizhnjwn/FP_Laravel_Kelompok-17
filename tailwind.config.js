@@ -10,6 +10,8 @@ export default {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './node_modules/flowbite/**/*.js', // Pastikan ini ada di sini
+        "./resources/**/*.js",
+         "./resources/**/*.vue",
     ],
 
     theme: {

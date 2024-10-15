@@ -2,8 +2,8 @@
     <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
-                <span class="subhead">HEALTHY LIVING</span>
-                <h1 class="display-4">HAPPY LIFE</h1>
+                <span class="subhead">HEALTHY BODY</span>
+                <h1 class="display-4">HAPPY COLLEGE</h1>
 
             </div>
         </div>
@@ -43,7 +43,7 @@
         </div> <!-- .bg-light -->
     </div> <!-- .bg-light -->
 
-    @include('user.doctor')
+    @include('user.specialty')
 
     @include('user.facilityhome')
 

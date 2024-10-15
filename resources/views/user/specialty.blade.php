@@ -1,4 +1,3 @@
-<x-layout>
 <div class="page-section">
      <div class="container">
        <h1 class="text-center mb-5 wow fadeInUp">Our Specialist</h1>
@@ -24,4 +23,3 @@
         </div>
      </div>
 </div> 
-</x-layout>

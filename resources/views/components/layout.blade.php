@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/owl-carousel/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/animate/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" />
 </head>
 
 <body>

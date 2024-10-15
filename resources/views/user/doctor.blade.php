@@ -1,6 +1,6 @@
 <div class="page-section">
     <div class="container">
-      <h1 class="text-center mb-5 wow fadeInUp">Dokter Kami</h1>
+      <h1 class="text-center wow fadeInUp" style="font-weight: bold; font-size: 2em;">Dokter Kami</h1>
   
           <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
 

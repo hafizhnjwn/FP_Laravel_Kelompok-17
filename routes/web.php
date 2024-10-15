@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
+use App\Models\Facility;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,20 +46,33 @@ Route::get('updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 
 Route::post('editdoctor/{id}', [AdminController::class, 'editdoctor']);
 
-Route::get('/add_news',[NewsController::class,'addnewsview']);
+use App\Http\Controllers\FacilityController;
 
-Route::get('/news_list',[NewsController::class,'showlist']);
+Route::get('/add_facility_view', [FacilityController::class, 'addview']);
+Route::post('/store_facility', [FacilityController::class, 'store_facility']);
+Route::get('/facility_list', [FacilityController::class, 'showlist']);
+Route::get('/deletefacility/{id}', [FacilityController::class, 'deletefacility']);
+Route::get('/updatefacility/{id}', [FacilityController::class, 'updatefacility']);
+Route::post('/updatefacility/{id}', [FacilityController::class, 'update']);
 
-Route::get('/deletenews/{id}', [NewsController::class, 'deletenews']);
-
-Route::get('updatenews/{id}', [NewsController::class, 'updatenews']);
-
-Route::post('updateberita/{id}', [NewsController::class, 'updateberita']);
-
-Route::post('/store_news',[NewsController::class,'store_news']);
 
 Route::post('/appointment',[HomeController::class,'appointment']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
-Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+Route::get('/myappointment/{id}', [HomeController::class, 'cancel_appoint'])->name('cancel_appoint');
+
+Route::get('/facilities', function () {
+    $query = Facility::latest();
+
+    if (request()->has('search')) {
+        $query->where('name', 'like', '%' . request('search') . '%');
+    }
+
+    $facilities = $query->paginate(16);
+
+    return view('user.facilities', ['facilities' => $facilities]);
+});
+Route::get('/facilities/{facility:slug}', function (Facility $facility) {
+    return view('user.facility', ['facility' => $facility]);
+});

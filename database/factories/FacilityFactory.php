@@ -21,7 +21,7 @@ class FacilityFactory extends Factory
             'name' => fake()->sentence(),
             'slug' => Str::slug(fake()->sentence()),
             'icon' => "1701708290.png",
-            'description' => fake()->text(),
+            'description' => fake()->text(1000),
             'available' => fake()->boolean(),
         ];
     }

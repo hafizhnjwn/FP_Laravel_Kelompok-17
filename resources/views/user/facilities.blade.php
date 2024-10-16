@@ -30,7 +30,7 @@
                 <div class="card-blog" style="height: 250px; overflow: hidden;">
                     <div class="header">
 
-                        <img src="newsimage/{{ $item->icon }}" alt="">
+                        <img src="facility-icons/{{ $item->icon }}" alt="">
 
                     </div>
                     <div class="body">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         @endforeach
-        <div class="px-10 flex-auto">
+        <div class="pt-10 flex-auto">
             {{ $facilities->links() }}
         </div>
     </div>

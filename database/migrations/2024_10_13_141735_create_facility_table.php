@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name'); // Nama fasilitas
             $table->string('slug')->unique(); // Slug fasilitas, unique
             $table->string('icon')->nullable(); // Icon fasilitas, bisa null
-            $table->string('description')->nullable(); // Deskripsi fasilitas, bisa null
+            $table->text('description')->nullable(); // Deskripsi fasilitas, bisa null
             $table->boolean('available')->default(true); // Status ketersediaan fasilitas, default tersedia
             $table->timestamps(); // Kolom created_at dan updated_at
         });

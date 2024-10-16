@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
+    <div class="page-hero bg-image overlay-dark" style="background-image: url(/facility-icons/{{ $facility->icon }});">
         <div class="hero-section">
             <div class="container text-center wow zoomIn">
                 <h1 class="display-4">{{ $facility->name }}</h1>

@@ -9,7 +9,7 @@
                     <div class="card-blog">
                         <div class="header">
 
-                            <img src="newsimage/{{ $item->icon }}" alt="">
+                            <img src="facility-icons/{{ $item->icon }}" alt="">
 
                         </div>
                         <div class="body">

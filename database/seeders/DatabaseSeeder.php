@@ -7,7 +7,6 @@ use Illuminate\Database\Seeder;
 use App\Models\Doctor;
 use App\Models\Facility;
 use App\Models\Specialty;
-use App\Models\News;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(SpecialtySeeder::class);
         Doctor::factory(100)->recycle(Specialty::factory(9)->create())->create();
+        Facility::factory(100)->create();
 
     }
 }

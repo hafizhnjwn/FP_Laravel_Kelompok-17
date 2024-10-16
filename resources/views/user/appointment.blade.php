@@ -22,7 +22,7 @@
                                 <option value="" disabled selected>Select doctor</option>
                                 @foreach ($doctors as $doctor)
                                     <option value="{{ $doctor->name }}">{{ $doctor->name }} |
-                                        {{ $doctor->speciality }}</option>
+                                        {{ $doctor->specialty->name }}</option>
                                 @endforeach
                             </select>
                         </div>

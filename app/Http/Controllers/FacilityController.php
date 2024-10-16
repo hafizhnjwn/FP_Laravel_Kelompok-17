@@ -38,7 +38,7 @@ class FacilityController extends Controller
 
     public function showlist()
     {
-        $facilities = Facility::all();
+        $facilities = Facility::orderBy('created_at', 'desc')->get();
         return view('admin.facility_list', compact('facilities'));
     }
 

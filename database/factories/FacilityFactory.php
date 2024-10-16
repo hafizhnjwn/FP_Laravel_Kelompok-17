@@ -20,7 +20,7 @@ class FacilityFactory extends Factory
         return [
             'name' => fake()->sentence(),
             'slug' => Str::slug(fake()->sentence()),
-            'icon' => "1701708290.png",
+            'icon' => fake()->randomElement(['1701708290.png', '1728923341.png', '1729070720.png']),
             'description' => fake()->text(1000),
             'available' => fake()->boolean(),
         ];

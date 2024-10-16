@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
+use App\Models\Specialty;
 
 class AdminController extends Controller
 {
@@ -23,10 +24,17 @@ class AdminController extends Controller
         $doctor->name=$request->name;
         $doctor->phone=$request->phone;
         $doctor->room=$request->room;
-        $doctor->speciality=$request->speciality;
+        $specialty = Specialty::where('name', $request->input('speciality'))->first();
 
-         $doctor->save();
-        return redirect()->back()->with('message', 'Doctor Added Successfully');
+        if ($specialty) {
+            // If specialty is found, assign the specialty ID to the doctor
+            $doctor->specialty_id = $specialty->id;
+            $doctor->save();
+            return redirect()->back()->with('message', 'Doctor Added Successfully');
+        } else {
+            // Specialty not found, handle the error
+            return back()->with('message', 'Specialty not found');
+        }
     }
 
     public function deletedoctor($id){
@@ -55,9 +63,7 @@ class AdminController extends Controller
             $doctor = doctor::find($id);
             $doctor->name = $request->name;
             $doctor->phone = $request->phone;
-            $doctor->speciality = $request->speciality;
             $doctor->room = $request->room;
-            
             
             $image = $request->file;
             if($image)
@@ -67,8 +73,17 @@ class AdminController extends Controller
                 $doctor->image = $imagename;
             }
             
-            $doctor->save();
-            return redirect()->back()->with('message', 'Doctor Details Updated Successfully');
+            $specialty = Specialty::where('name', $request->input('speciality'))->first();
+
+            if ($specialty) {
+                // If specialty is found, assign the specialty ID to the doctor
+                $doctor->specialty_id = $specialty->id;
+                $doctor->save();
+                return redirect()->back()->with('message', 'Doctor Updated Successfully');
+            } else  {
+                // Specialty not found, handle the error
+                return back()->with('message', 'Specialty not found');
+            }
         }
         return redirect()->back();
     }

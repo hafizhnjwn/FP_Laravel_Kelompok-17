@@ -11,6 +11,10 @@
  {
      use HasFactory, Notifiable;
 
+     protected $fillable = [
+        'name'
+    ];
+
      public function doctors(): HasMany
      {
          return $this->hasMany(Doctor::class);      

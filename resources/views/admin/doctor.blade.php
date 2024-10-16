@@ -20,7 +20,7 @@
       <tr align="center">
         <td>{{$doctor->name}}</td>
         <td>{{$doctor->phone}}</td>
-        <td>{{$doctor->speciality}}</td>
+        <td>{{$doctor->specialty->name}}</td>
         <td>{{$doctor->room}}</td>
         <td><img height="100" width="100" src="doctorimage/{{$doctor->image}}"></td>
         <td><a href="{{url('deletedoctor', $doctor->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete selected doctor?')">Delete</a></td>

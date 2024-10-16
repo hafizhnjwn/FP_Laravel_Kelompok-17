@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //$this->call(SpecialtySeeder::class);
-        Doctor::factory(100)->recycle(Specialty::factory(9)->create())->create();
+        Doctor::factory(15)->recycle(Specialty::factory(9)->create())->create();
         Facility::factory(100)->create();
 
     }

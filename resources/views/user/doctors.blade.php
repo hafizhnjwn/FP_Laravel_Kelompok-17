@@ -9,7 +9,7 @@
              <div class="item">
                <div class="card-doctor">
                  <div class="header">
-                   <img height="300px" src="doctorimage/{{$doctor->image}}" alt="">
+                   <img height="300px" src="{{ asset('doctorimage/' . $doctor->image) }}" alt="Doctor Image">
                  </div>
                  <div class="body">
                    <p class="text-xl mb-0">{{ $doctor->name}}</p>

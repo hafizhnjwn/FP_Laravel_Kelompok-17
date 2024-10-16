@@ -20,7 +20,9 @@ class DoctorFactory extends Factory
             'name' => fake()->name(),
             'phone' => fake()->phoneNumber(),
             'specialty_id' => Specialty::factory(),
-            'room' => fake()->numberBetween(0, 20)
+            'room' => fake()->numberBetween(0, 20),
+            'image' => fake()->randomElement(['1701272967.jpg','1701437997.jpg','1701437608.jpg','1701437692.jpg'])
+            //'name' => fake()->unique()->randomElement(['Cardiology', 'Neurology', 'Gynecology', 'Rheumathology', 'Ophthalmologists', 'Psychiatrists', 'Radiologists', 'Urologists', 'Hematologists']),
         ];
     }
 }

@@ -21,7 +21,7 @@
     2. Home page (udah log in)
     3. Appointment (List appointment)
     4. Dokter-dokter (pake pagination) berdasarkan jenis spesialis
-    5. Fasilitas
+    5. Fasilitas (terdapoat paginasi dan melakukan search berdasarkan nama)
 
 ## Video Presentasi
 
